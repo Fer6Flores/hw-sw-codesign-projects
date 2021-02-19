@@ -8,7 +8,7 @@
 int main (void) 
 {
 
-    XGpio dip, push; // Variables to access switches and pushbuttons connected to GPIO interfaces
+    XGpio dip, push, leds; // Variables to access switches and pushbuttons connected to GPIO interfaces
 	int psb_check; // Pushbuttons state
 	int dip_check; // Switches state
 	
@@ -29,7 +29,11 @@ int main (void)
 
     // Set data direction for pushbuttons
     XGpio_SetDataDirection(&push, 1, 0xFFFFFFFF);
-	
+
+    // LEDs
+    XGpio_Initialize(&leds, XPAR_LEDS_DEVICE_ID);
+    XGpio_SetDataDirection(&leds, 1, 0x00000000);
+
 	while (1)
 	{
 		// Read pushbuttons and assign the value to psb_check variable
@@ -41,6 +45,9 @@ int main (void)
 		dip_check = XGpio_DiscreteRead(&dip, 1);
 
 		xil_printf("DIP Switch Status %x\r\n", dip_check);
+
+		//LEDs
+		XGpio_DiscreteSet(&leds, 1, dip_check);
 	  
 		sleep(1);
 	}
