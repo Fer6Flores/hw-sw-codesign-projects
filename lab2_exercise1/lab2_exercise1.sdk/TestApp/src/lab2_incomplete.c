@@ -47,9 +47,9 @@ int main (void)
 		xil_printf("DIP Switch Status %x\r\n", dip_check);
 
 		//LEDs
-		XGpio_DiscreteSet(&leds, 1, dip_check);
+		XGpio_DiscreteWrite(&leds, 1, dip_check);
 	  
-		sleep(1);
+		//sleep(1);
 	}
 }
  
