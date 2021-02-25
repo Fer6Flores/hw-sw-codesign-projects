@@ -1,0 +1,94 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Feb 24 16:40:26 2021
+# Process ID: 10956
+# Current directory: H:/Escritorio/lab2_exercise2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8788 H:\Escritorio\lab2_exercise2\lab2_exercise2.xpr
+# Log file: H:/Escritorio/lab2_exercise2/vivado.log
+# Journal file: H:/Escritorio/lab2_exercise2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/Escritorio/lab2_exercise2/lab2_exercise2.xpr
+update_compile_order -fileset sources_1
+reset_run impl_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_bd_design {H:/Escritorio/lab2_exercise2/lab2_exercise2.srcs/sources_1/bd/system/system.bd}
+open_run impl_1
+open_bd_design {H:/Escritorio/lab2_exercise2/lab2_exercise2.srcs/sources_1/bd/system/system.bd}
+set_property name switchesAndButtons [get_bd_cells switches]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+regenerate_bd_layout
+save_bd_design
+file copy -force H:/Escritorio/lab2_exercise2/lab2_exercise2.runs/impl_1/system_wrapper.sysdef H:/Escritorio/lab2_exercise2/lab2_exercise2.sdk/system_wrapper.hdf
+
+launch_sdk -workspace H:/Escritorio/lab2_exercise2/lab2_exercise2.sdk -hwspec H:/Escritorio/lab2_exercise2/lab2_exercise2.sdk/system_wrapper.hdf
+save_project_as lab2_exercise3 H:/Escritorio/lab2_exercise3 -force
+open_bd_design {H:/Escritorio/lab2_exercise3/lab2_exercise3.srcs/sources_1/bd/system/system.bd}
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M02_AXI] [get_bd_intf_nets leds_GPIO] [get_bd_cells leds]
+delete_bd_objs [get_bd_intf_ports leds]
+startgroup
+set_property -dict [list CONFIG.C_GPIO_WIDTH {13} CONFIG.C_GPIO2_WIDTH {8} CONFIG.C_ALL_INPUTS_2 {0} CONFIG.GPIO_BOARD_INTERFACE {Custom} CONFIG.GPIO2_BOARD_INTERFACE {leds_8bits} CONFIG.C_ALL_OUTPUTS_2 {1}] [get_bd_cells switchesAndButtons]
+endgroup
+delete_bd_objs [get_bd_intf_nets switches_GPIO2] [get_bd_intf_ports buttons]
+delete_bd_objs [get_bd_intf_nets switches_GPIO] [get_bd_intf_ports switches]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins switchesAndButtons/GPIO2]
+endgroup
+set_property name leds [get_bd_intf_ports GPIO2_0]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins switchesAndButtons/GPIO]
+endgroup
+set_property name switchesAndButtons [get_bd_intf_ports GPIO_0]
+regenerate_bd_layout
+validate_bd_design
+startgroup
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+startgroup
+endgroup
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_bd_design {H:/Escritorio/lab2_exercise3/lab2_exercise3.srcs/sources_1/bd/system/system.bd}
+create_ip_run [get_files -of_objects [get_fileset sources_1] H:/Escritorio/lab2_exercise3/lab2_exercise3.srcs/sources_1/bd/system/system.bd]
+refresh_design
+set_property IOSTANDARD LVCMOS25 [get_ports [list {switchesAndButtons_tri_i[12]}]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list {switchesAndButtons_tri_i[12]} {switchesAndButtons_tri_i[11]} {switchesAndButtons_tri_i[10]} {switchesAndButtons_tri_i[9]} {switchesAndButtons_tri_i[8]} {switchesAndButtons_tri_i[7]} {switchesAndButtons_tri_i[6]} {switchesAndButtons_tri_i[5]} {switchesAndButtons_tri_i[4]} {switchesAndButtons_tri_i[3]} {switchesAndButtons_tri_i[2]} {switchesAndButtons_tri_i[1]} {switchesAndButtons_tri_i[0]}]]
+place_ports {switchesAndButtons_tri_i[12]} T18
+place_ports {switchesAndButtons_tri_i[11]} R18
+place_ports {switchesAndButtons_tri_i[10]} R16
+place_ports {switchesAndButtons_tri_i[9]} P16
+place_ports {switchesAndButtons_tri_i[11]} N15
+startgroup
+set_property package_pin "" [get_ports [list  {switchesAndButtons_tri_i[9]}]]
+place_ports {switchesAndButtons_tri_i[10]} P16
+endgroup
+place_ports {switchesAndButtons_tri_i[9]} R18
+place_ports {switchesAndButtons_tri_i[8]} R16
+place_ports {switchesAndButtons_tri_i[7]} M15
+place_ports {switchesAndButtons_tri_i[6]} H17
+place_ports {switchesAndButtons_tri_i[5]} H18
+place_ports {switchesAndButtons_tri_i[4]} H19
+place_ports {switchesAndButtons_tri_i[3]} F21
+place_ports {switchesAndButtons_tri_i[2]} H22
+place_ports {switchesAndButtons_tri_i[1]} G22
+place_ports {switchesAndButtons_tri_i[0]} F22
+file mkdir H:/Escritorio/lab2_exercise3/lab2_exercise3.srcs/constrs_1/new
+close [ open H:/Escritorio/lab2_exercise3/lab2_exercise3.srcs/constrs_1/new/pines.xdc w ]
+add_files -fileset constrs_1 H:/Escritorio/lab2_exercise3/lab2_exercise3.srcs/constrs_1/new/pines.xdc
+set_property target_constrs_file H:/Escritorio/lab2_exercise3/lab2_exercise3.srcs/constrs_1/new/pines.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+reset_run impl_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
