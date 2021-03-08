@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Feb 27 01:23:21 2021
+# Process ID: 14628
+# Current directory: H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.runs/system_auto_pc_2_synth_1
+# Command line: vivado.exe -log system_auto_pc_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_auto_pc_2.tcl
+# Log file: H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.runs/system_auto_pc_2_synth_1/system_auto_pc_2.vds
+# Journal file: H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.runs/system_auto_pc_2_synth_1\vivado.jou
+#-----------------------------------------------------------
+source system_auto_pc_2.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'h:/GitRepositories/hw-sw-codesign-projects/led_ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'h:/GitRepositories/hw-sw-codesign-projects/lcd_8_bits_ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'H:/Xilinx/Vivado/2018.3/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is h:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.cache/ip 
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_auto_pc_2, cache-ID = 1ee6f6cb4663b416.
+INFO: [Common 17-206] Exiting Vivado at Sat Feb 27 01:23:35 2021...

@@ -1,0 +1,70 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Feb 19 11:27:05 2021
+# Process ID: 2760
+# Current directory: H:/GitRepositories/hw-sw-codesign-projects/lab2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9328 H:\GitRepositories\hw-sw-codesign-projects\lab2\lab2.xpr
+# Log file: H:/GitRepositories/hw-sw-codesign-projects/lab2/vivado.log
+# Journal file: H:/GitRepositories/hw-sw-codesign-projects/lab2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/GitRepositories/hw-sw-codesign-projects/lab2/lab2.xpr
+update_compile_order -fileset sources_1
+save_project_as lab2_exercise1 H:/GitRepositories/hw-sw-codesign-projects/lab2_exercise1 -force
+open_bd_design {H:/GitRepositories/hw-sw-codesign-projects/lab2_exercise1/lab2_exercise1.srcs/sources_1/bd/system/system.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+regenerate_bd_layout
+set_property -dict [list CONFIG.C_GPIO_WIDTH {8} CONFIG.GPIO_BOARD_INTERFACE {leds_8bits} CONFIG.C_ALL_OUTPUTS {1}] [get_bd_cells axi_gpio_0]
+set_property name leds [get_bd_cells axi_gpio_0]
+set_property location {3 885 444} [get_bd_cells leds]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {3}] [get_bd_cells ps7_0_axi_periph]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins leds/S_AXI] -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
+connect_bd_net [get_bd_pins leds/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins leds/s_axi_aresetn] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+regenerate_bd_layout
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M02_AXI] [get_bd_cells leds]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_0/S_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.C_GPIO_WIDTH {8} CONFIG.GPIO_BOARD_INTERFACE {leds_8bits} CONFIG.C_ALL_OUTPUTS {1}] [get_bd_cells axi_gpio_0]
+endgroup
+set_property name leds [get_bd_cells axi_gpio_0]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins leds/GPIO]
+endgroup
+undo
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {leds_8bits ( LED ) } Manual_Source {Auto}}  [get_bd_intf_pins leds/GPIO]
+endgroup
+set_property name leds [get_bd_intf_ports leds_8bits]
+report_ip_status -name ip_status 
+validate_bd_design
+report_ip_status -name ip_status 
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+create_ip_run [get_files -of_objects [get_fileset sources_1] H:/GitRepositories/hw-sw-codesign-projects/lab2_exercise1/lab2_exercise1.srcs/sources_1/bd/system/system.bd]
+refresh_design
+file copy -force H:/GitRepositories/hw-sw-codesign-projects/lab2_exercise1/lab2_exercise1.runs/impl_1/system_wrapper.sysdef H:/GitRepositories/hw-sw-codesign-projects/lab2_exercise1/lab2_exercise1.sdk/system_wrapper.hdf
+
