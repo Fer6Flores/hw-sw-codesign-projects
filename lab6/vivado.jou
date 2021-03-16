@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Mar 15 22:23:21 2021
+# Process ID: 13088
+# Current directory: H:/GitRepositories/hw-sw-codesign-projects/lab6
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13036 H:\GitRepositories\hw-sw-codesign-projects\lab6\lab6.xpr
+# Log file: H:/GitRepositories/hw-sw-codesign-projects/lab6/vivado.log
+# Journal file: H:/GitRepositories/hw-sw-codesign-projects/lab6\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/GitRepositories/hw-sw-codesign-projects/lab6/lab6.xpr
+update_compile_order -fileset sources_1
+archive_project H:/GitRepositories/hw-sw-codesign-projects/lab6.xpr.zip -temp_dir H:/GitRepositories/hw-sw-codesign-projects/lab6/.Xil/Vivado-13088-FloresToWin -force -include_local_ip_cache -include_config_settings
