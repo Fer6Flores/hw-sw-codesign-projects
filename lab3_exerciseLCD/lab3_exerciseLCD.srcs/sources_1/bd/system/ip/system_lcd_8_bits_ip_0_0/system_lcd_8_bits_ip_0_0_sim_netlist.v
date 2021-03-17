@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sat Feb 27 01:22:31 2021
+// Date        : Wed Mar 17 18:24:52 2021
 // Host        : FloresToWin running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               h:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_lcd_8_bits_ip_0_0/system_lcd_8_bits_ip_0_0_sim_netlist.v
+//               H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_lcd_8_bits_ip_0_0/system_lcd_8_bits_ip_0_0_sim_netlist.v
 // Design      : system_lcd_8_bits_ip_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

@@ -16,7 +16,7 @@ entity lcd_8_bits_ip_v1_0 is
 	);
 	port (
 		-- Users to add ports here
-        lcd : out std_logic_vector(10 downto 0); -- LCD pins
+        lcd : inout std_logic_vector(10 downto 0); -- LCD pins
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -55,7 +55,7 @@ architecture arch_imp of lcd_8_bits_ip_v1_0 is
 		C_S_AXI_ADDR_WIDTH	: integer	:= 4
 		);
 		port (
-		lcd : out std_logic_vector(10 downto 0);
+		lcd : inout std_logic_vector(10 downto 0);
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);

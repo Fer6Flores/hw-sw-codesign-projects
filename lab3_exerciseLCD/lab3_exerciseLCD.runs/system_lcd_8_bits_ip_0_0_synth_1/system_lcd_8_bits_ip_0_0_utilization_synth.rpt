@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Feb 27 01:22:31 2021
+| Date         : Wed Mar 17 18:24:52 2021
 | Host         : FloresToWin running 64-bit major release  (build 9200)
 | Command      : report_utilization -file system_lcd_8_bits_ip_0_0_utilization_synth.rpt -pb system_lcd_8_bits_ip_0_0_utilization_synth.pb
 | Design       : system_lcd_8_bits_ip_0_0

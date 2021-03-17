@@ -20,9 +20,9 @@
 // which have been assigned to the slave register 0 of the LCD IP (lcd <= slv_reg0 (10 downto 0);)
 // in the following manner
 
-// Se�ales de control y datos del LCD
+// Senales de control y datos del LCD
 // Bit 10 = EN
-// Bit 9 = RS (0: instrucci�n; 1: dato)
+// Bit 9 = RS (0: instruccion; 1: dato)
 // Bit 8 = RW (0: escritura; 1: lectura)
 // Bit 7 = DB7
 // Bit 6 = DB6
@@ -56,7 +56,7 @@
 // Delay function
 void usleep(unsigned int delay) // the value delay is in microseconds, approximately
 {
-	volatile int j, i; // it MUST be declared as volatile so that the compiler does not optimise (eliminate) the for loop
+	volatile unsigned int j, i; // it MUST be declared as volatile so that the compiler does not optimise (eliminate) the for loop
 
 	for(i=0; i<delay; i++)
 		for(j=0; j<70; j++);
@@ -71,14 +71,16 @@ void LCD_WriteInst(unsigned char inst)
 	// The following steps must be done
 
 	// 1. Write the byte to the LCD port with the LCD RS and RW signals at the right value
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b00000000000 | inst);
 
 	// 2. Activate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b10000000000 | inst);
 
 	// 3. Deactivate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b00000000000 | inst);
 
 	// 4. Wait for "INST_DELAY" microseconds
-
-
+	usleep(INST_DELAY);
 }
 
 // Send data byte function
@@ -89,14 +91,16 @@ void LCD_WriteData(unsigned char data)
 	// The following steps must be done
 
 	// 1. Write the byte to the LCD port with the LCD RS and RW signals at the right value
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b01000000000 | data);
 
 	// 2. Activate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b11000000000 | data);
 
 	// 3. Deactivate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b01000000000 | data);
 
 	// 4. Wait for "DATA_DELAY" microseconds
-
-
+	usleep(DATA_DELAY);
 }
 
 
@@ -110,8 +114,8 @@ void LCD_WriteData(unsigned char data)
 // LCD On function
 void LCD_On(void)
 {
-// Write the necessary line to send the instruction to turn the display off
-
+	// Write the necessary line to send the instruction to turn the display on
+	LCD_WriteInst(0b00001111);
 }
 
 
@@ -119,7 +123,7 @@ void LCD_On(void)
 void LCD_Off(void)
 {
 	// Write the necessary line to send the instruction to turn the display off
-
+	LCD_WriteInst(0b00001000);
 }
 
 
@@ -127,6 +131,7 @@ void LCD_Off(void)
 void LCD_Clear(void)
 {
 	// Write the necessary line to send the instruction to clear the LCD
+	LCD_WriteInst(0b00000001);
 
 	// wait 2 ms
 	usleep(2000); // the "Clear" instruction takes between 82 us and 1.64 ms
@@ -142,27 +147,25 @@ void LCD_Init(void)
 	// The following steps must be done
 
 	// 0. Wait 20ms after VCC > 4.5V
-
+	usleep(20000);
 
 	// 1. Send the instruction "Function Set" for two lines, font 5x8 (0x38)
-
+	LCD_WriteInst(0b00111000);
 
 	// 2. Wait 37 us
-
+	usleep(37);
 
 	// 3. Send the instruction "Display On"
-
+	LCD_On();
 
 	// 4. Wait 37 us
-
+	usleep(37);
 
 	// 5. Send the instruction "Display Clear"
-
+	LCD_Clear();
 
 	// 6. Wait 1.52 ms
-
-
-
+	usleep(1520);
 }
 
 
@@ -171,7 +174,11 @@ void LCD_SetLine(int line) //line1 = 1, line2 = 2
 {
 	// Write the necessary lines to send the instructions to the LCD
 	// in order to position the cursor at the beginning of the line indicated by the "line" parameter
-
+	if (line == 1) {
+		LCD_WriteInst(0b0010000000);
+	} else {
+		LCD_WriteInst(0b0011000000);
+	}
 }
 
 
@@ -182,14 +189,15 @@ void LCD_PrintString(char * line)
 	// Write the necessary lines to send a string to the LCD
 	// The following steps must be done
 
-	// 0. Initialise a loop index
+	// 0. Initialize a loop index
 
 	// 1. While there are characters in the "line" variable
-
-	// 2. Send a data byte
-
-	// 3. Continue loop until it is finished
-
-
+	while (*line != '\0')
+	{
+		// 2. Send a data byte
+		LCD_WriteData(*line);
+		// 3. Continue loop until it is finished
+		line ++;
+	}
 }
 

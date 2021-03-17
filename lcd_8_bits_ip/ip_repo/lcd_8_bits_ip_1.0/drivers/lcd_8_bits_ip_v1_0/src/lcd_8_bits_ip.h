@@ -6,11 +6,12 @@
 /****************** Include Files ********************/
 #include "xil_types.h"
 #include "xstatus.h"
+#include "xil_io.h" // puto vivado
 
-#define LCD_8_BITS_IP_S_AXI_SLV_REG0_OFFSET 0
-#define LCD_8_BITS_IP_S_AXI_SLV_REG1_OFFSET 4
-#define LCD_8_BITS_IP_S_AXI_SLV_REG2_OFFSET 8
-#define LCD_8_BITS_IP_S_AXI_SLV_REG3_OFFSET 12
+#define LCD_8_BITS_IP_S00_AXI_SLV_REG0_OFFSET 0
+#define LCD_8_BITS_IP_S00_AXI_SLV_REG1_OFFSET 4
+#define LCD_8_BITS_IP_S00_AXI_SLV_REG2_OFFSET 8
+#define LCD_8_BITS_IP_S00_AXI_SLV_REG3_OFFSET 12
 
 
 /**************************** Type Definitions *****************************/
@@ -75,5 +76,17 @@
  *
  */
 XStatus LCD_8_BITS_IP_Reg_SelfTest(void * baseaddr_p);
+
+void LCD_On(void);
+
+void LCD_Off(void);
+
+void LCD_Clear(void);
+
+void LCD_Init(void);
+
+void LCD_SetLine(int line); //line1 = 1, line2 = 2
+
+void LCD_PrintString(char * line);
 
 #endif // LCD_8_BITS_IP_H
