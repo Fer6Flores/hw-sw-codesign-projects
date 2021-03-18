@@ -6,7 +6,7 @@
 <Project Version="7" Minor="39" Path="h:/gitrepositories/hw-sw-codesign-projects/lab3_exerciselcd/lab3_exerciselcd.tmp/lcd_8_bits_ip_v1_0_project/lcd_8_bits_ip_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="34f719b910b24183867e45a87e340773"/>
+    <Option Name="Id" Val="df65037fec954f7f86e2c2a326f1f8b9"/>
     <Option Name="Part" Val="xc7z020clg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>

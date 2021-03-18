@@ -16,7 +16,7 @@ entity lcd_8_bits_ip_v1_0_S_AXI is
 	);
 	port (
 		-- Users to add ports here
-        lcd : out std_logic_vector(10 downto 0); -- LCD pins
+        lcd : inout std_logic_vector(10 downto 0); -- LCD pins
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
