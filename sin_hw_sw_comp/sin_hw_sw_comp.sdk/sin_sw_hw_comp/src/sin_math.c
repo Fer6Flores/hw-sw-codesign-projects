@@ -4,7 +4,7 @@
  */
 
 #include <stdlib.h>                // For pointers
-#include "sin_sw.h"
+#include "sin_math.h"
 #include <math.h>
 
 float *sin_math(float time)

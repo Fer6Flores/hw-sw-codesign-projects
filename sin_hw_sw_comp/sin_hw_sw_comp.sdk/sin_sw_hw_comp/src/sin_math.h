@@ -3,8 +3,8 @@
  *      Author: Fer6Flores
  */
 
-#ifndef SRC_SIN_SW_H_
-#define SRC_SIN_SW_H_
+#ifndef SRC_SIN_MATH_H_
+#define SRC_SIN_MATH_H_
 
 // MACROs
 #define PI 3.1415927f
@@ -14,6 +14,6 @@
 #define SAMPLE_PERIOD 0.0001f 	// Sample period for the sinusoidal signals.
 								// Ts = 0.0001 s = 100 us => Fs = 10 kHz
 // Function prototypes
-float *sin_math(float current_time);
+float *sin_math(float time);
 
-#endif /* SRC_SIN_SW_H_ */
+#endif /* SRC_SIN_MATH_H_ */
