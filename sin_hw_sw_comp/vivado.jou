@@ -13,3 +13,4 @@ start_gui
 open_project H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.xpr
 update_compile_order -fileset sources_1
 launch_sdk -workspace H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk -hwspec H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk/system_wrapper.hdf
+launch_sdk -workspace H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk -hwspec H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk/system_wrapper.hdf

@@ -17,10 +17,10 @@ uint32_t *sin_from_lut(float time)
 	uint32_t *vref = (uint32_t *)malloc(5 * sizeof(uint32_t));
 
 	uint32_t index0 = (uint32_t) round((time - floor(time / (PERIOD_NUMBER_SAMPLES * SAMPLE_PERIOD)) * PERIOD_NUMBER_SAMPLES * SAMPLE_PERIOD) / SAMPLE_PERIOD);
-	uint32_t index1 = (index0 + 40) ? (index0 + 40) : (index0 - 160);
-	uint32_t index2 = (index1 + 40) ? (index1 + 40) : (index1 - 160);
-	uint32_t index3 = (index2 + 40) ? (index2 + 40) : (index2 - 160);
-	uint32_t index4 = (index3 + 40) ? (index3 + 40) : (index3 - 160);
+	uint32_t index1 = (index0 + 40 < 200) ? (index0 + 40) : (index0 - 160);
+	uint32_t index2 = (index1 + 40 < 200) ? (index1 + 40) : (index1 - 160);
+	uint32_t index3 = (index2 + 40 < 200) ? (index2 + 40) : (index2 - 160);
+	uint32_t index4 = (index3 + 40 < 200) ? (index3 + 40) : (index3 - 160);
 
 	vref[0] = sin_lut[index0];
 	vref[1] = sin_lut[index1];
