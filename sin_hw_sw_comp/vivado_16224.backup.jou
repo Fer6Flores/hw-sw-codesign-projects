@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Apr 12 12:40:51 2021
+# Process ID: 16224
+# Current directory: H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12324 H:\GitRepositories\hw-sw-codesign-projects\sin_hw_sw_comp\sin_hw_sw_comp.xpr
+# Log file: H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/vivado.log
+# Journal file: H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk -hwspec H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk/system_wrapper.hdf
+launch_sdk -workspace H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk -hwspec H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk/system_wrapper.hdf
+launch_sdk -workspace H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk -hwspec H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk/system_wrapper.hdf
+archive_project H:/Escritorio/sin_hw_sw_comp.xpr.zip -temp_dir H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/.Xil/Vivado-16224-FloresToWin -force -include_local_ip_cache -include_config_settings
+archive_project H:/sin_hw_sw_comp.xpr.zip -temp_dir H:/Escritorio -force -include_local_ip_cache -include_config_settings

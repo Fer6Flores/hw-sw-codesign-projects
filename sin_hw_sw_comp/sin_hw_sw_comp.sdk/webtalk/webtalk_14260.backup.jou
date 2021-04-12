@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Thu Mar 25 13:44:24 2021
+# Process ID: 14260
+# Current directory: H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk/webtalk/webtalk.log
+# Journal file: H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

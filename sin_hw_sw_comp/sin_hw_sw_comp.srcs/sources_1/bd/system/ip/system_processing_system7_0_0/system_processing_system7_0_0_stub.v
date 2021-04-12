@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Thu Feb 25 02:08:39 2021
+// Date        : Sat Apr 10 21:53:08 2021
 // Host        : FloresToWin running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top system_processing_system7_0_0 -prefix
-//               system_processing_system7_0_0_ system_processing_system7_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0_stub.v
 // Design      : system_processing_system7_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

@@ -23,36 +23,34 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir H:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.cache/wt [current_project]
-set_property parent.project_path H:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.xpr [current_project]
+set_property webtalk.parent_dir H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.cache/wt [current_project]
+set_property parent.project_path H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-set_property ip_repo_paths h:/GitRepositories/hw-sw-codesign-projects/led_ip [current_project]
+set_property ip_repo_paths {
+  h:/GitRepositories/hw-sw-codesign-projects/led_ip
+  h:/GitRepositories/hw-sw-codesign-projects/sin_lut
+} [current_project]
 update_ip_catalog
-set_property ip_output_repo h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.cache/ip [current_project]
+set_property ip_output_repo h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib H:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/hdl/system_wrapper.vhd
-add_files H:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/system.bd
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_axi_bram_ctrl_0_0/system_axi_bram_ctrl_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_axi_bram_ctrl_0_bram_0/system_axi_bram_ctrl_0_bram_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_auto_pc_3/system_auto_pc_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_auto_pc_1/system_auto_pc_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/ip/system_auto_pc_2/system_auto_pc_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all H:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/sources_1/bd/system/system_ooc.xdc]
+read_vhdl -library xil_defaultlib H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/hdl/system_wrapper.vhd
+add_files H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/system.bd
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all h:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/sources_1/bd/system/system_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -62,8 +60,8 @@ set_property used_in_implementation false [get_files -all H:/GitRepositories/hw-
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{H:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/constrs_1/imports/Resources laboratory lesson 3/lab3_incomplete.xdc}}
-set_property used_in_implementation false [get_files {{H:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/constrs_1/imports/Resources laboratory lesson 3/lab3_incomplete.xdc}}]
+read_xdc {{H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/constrs_1/imports/Resources laboratory lesson 3/lab3_incomplete.xdc}}
+set_property used_in_implementation false [get_files {{H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/constrs_1/imports/Resources laboratory lesson 3/lab3_incomplete.xdc}}]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

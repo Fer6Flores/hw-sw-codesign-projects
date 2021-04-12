@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:{H:/GitRepositories/hw-sw-codesign-projects/lab3/lab3.srcs/constrs_1/imports/Resources laboratory lesson 3/lab3_incomplete.xdc} rfile:{../../../lab3.srcs/constrs_1/imports/Resources laboratory lesson 3/lab3_incomplete.xdc} id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:{H:/GitRepositories/hw-sw-codesign-projects/sin_hw_sw_comp/sin_hw_sw_comp.srcs/constrs_1/imports/Resources laboratory lesson 3/lab3_incomplete.xdc} rfile:{../../../sin_hw_sw_comp.srcs/constrs_1/imports/Resources laboratory lesson 3/lab3_incomplete.xdc} id:1} [current_design]
 set_property src_info {type:XDC file:1 line:18 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN T22 [get_ports {LED[0]}];
 set_property src_info {type:XDC file:1 line:19 export:INPUT save:INPUT read:READ} [current_design]
