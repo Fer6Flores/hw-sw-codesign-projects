@@ -9,6 +9,7 @@
 #include "xparameters.h"
 #include "xil_printf.h"
 #include "sleep.h"
+#include "stdio.h"
 
 int main()
 {
@@ -55,21 +56,20 @@ int main()
 		Vaux0pData = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_AUX_MIN);
 		Vaux8pData = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_AUX_MIN+8);
 
-		xil_printf("--------------------------------\r\n");
-		xil_printf("Valores del XADC: \r\n");
-		xil_printf("TempData: %i\r\n", TempData);
-		xil_printf("VccintData: %i\r\n", VccintData);
-		xil_printf("VccauxData: %i\r\n", VccauxData);
-		xil_printf("VpVnData: %i\r\n", VpVnData);
-		xil_printf("VrefpData: %i\r\n", VrefpData);
-		xil_printf("VrefnData: %i\r\n", VrefnData);
-		xil_printf("VbramData: %i\r\n", VbramData);
-		xil_printf("VccpintData: %i\r\n", VccpintData);
-		xil_printf("VccpauxData: %i\r\n", VccpauxData);
-		xil_printf("VccpdroData: %i\r\n", VccpdroData);
-		xil_printf("Vaux0pData: %i\r\n", Vaux0pData);
-		xil_printf("Vaux8pData: %i\r\n", Vaux8pData);
-		xil_printf("--------------------------------\r\n\r\n");
+		printf("\r\n\r\n-------------- Valores del XADC:\r\n");
+		printf("TempData: %f\r\n", (float)TempData/4095.0);
+		printf("VccintData: %f\r\n", (float)VccintData/4095.0);
+		printf("VccauxData: %f\r\n", (float)VccauxData/4095.0);
+		printf("VpVnData: %f\r\n", (float)VpVnData/4095.0);
+		printf("VrefpData: %f\r\n", (float)VrefpData/4095.0);
+		printf("VrefnData: %f\r\n", (float)VrefnData/4095.0);
+		printf("VbramData: %f\r\n", (float)VbramData/4095.0);
+		printf("VccpintData: %f\r\n", (float)VccpintData/4095.0);
+		printf("VccpauxData: %f\r\n", (float)VccpauxData/4095.0);
+		printf("VccpdroData: %f\r\n", (float)VccpdroData/4095.0);
+		printf("Vaux0pData: %f\r\n", (float)Vaux0pData/4095.0);
+		printf("Vaux8pData: %f\r\n", (float)Vaux8pData/4095.0);
+		printf("--------------------------------");
 
 		sleep(1);
 	}
