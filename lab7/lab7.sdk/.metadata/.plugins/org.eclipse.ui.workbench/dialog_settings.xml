@@ -23,6 +23,7 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="H:\Escritorio\DSE\3_Laboratory\Lab7\Resources laboratory lesson"/>
 			<item value="H:\Escritorio\DSE\3_Laboratory\Lab4\Resources laboratory lesson 4"/>
 			<item value="H:\Escritorio\DSE\3_Laboratory\Lab2\Resources laboratory lesson 2"/>
 		</list>

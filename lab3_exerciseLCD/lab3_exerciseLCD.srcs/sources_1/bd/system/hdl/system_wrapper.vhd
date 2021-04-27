@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
---Date        : Wed Mar 17 18:23:56 2021
+--Date        : Tue Apr 27 21:55:28 2021
 --Host        : FloresToWin running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -34,18 +34,22 @@ entity system_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    LCD : out STD_LOGIC_VECTOR ( 10 downto 0 );
-    LED : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    buttons_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    switches_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    LCD : inout STD_LOGIC_VECTOR ( 10 downto 0 );
+    SWITCHES_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 end system_wrapper;
 
 architecture STRUCTURE of system_wrapper is
   component system is
   port (
-    LED : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    LCD : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    LCD : inout STD_LOGIC_VECTOR ( 10 downto 0 );
+    SWITCHES_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -60,15 +64,7 @@ architecture STRUCTURE of system_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    buttons_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    switches_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component system;
 begin
@@ -96,8 +92,6 @@ system_i: component system
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       LCD(10 downto 0) => LCD(10 downto 0),
-      LED(7 downto 0) => LED(7 downto 0),
-      buttons_tri_i(4 downto 0) => buttons_tri_i(4 downto 0),
-      switches_tri_i(7 downto 0) => switches_tri_i(7 downto 0)
+      SWITCHES_tri_i(7 downto 0) => SWITCHES_tri_i(7 downto 0)
     );
 end STRUCTURE;

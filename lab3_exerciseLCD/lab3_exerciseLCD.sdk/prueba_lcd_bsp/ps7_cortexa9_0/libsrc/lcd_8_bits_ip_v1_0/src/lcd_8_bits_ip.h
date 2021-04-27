@@ -89,4 +89,10 @@ void LCD_SetLine(int line); //line1 = 1, line2 = 2
 
 void LCD_PrintString(char * line);
 
+u32 LCD_ReadStatus(void);
+
+void LCD_SetMemoryAddress(unsigned char address, int mem);
+
+unsigned char LCD_ReadData(void);
+
 #endif // LCD_8_BITS_IP_H

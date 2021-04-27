@@ -65,30 +65,18 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  create_project -in_memory -part xc7z020clg484-1
-  set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.cache/wt [current_project]
-  set_property parent.project_path H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.xpr [current_project]
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint H:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.runs/impl_1/system_wrapper.dcp
+  set_property webtalk.parent_dir H:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.cache/wt [current_project]
+  set_property parent.project_path H:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.xpr [current_project]
   set_property ip_repo_paths {
-  h:/GitRepositories/hw-sw-codesign-projects/led_ip
-  H:/GitRepositories/hw-sw-codesign-projects/lcd_8_bits_ip
+  H:/GitR/hw-sw-codesign-projects/led_ip
+  H:/GitR/hw-sw-codesign-projects/lcd_8_bits_ip
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.cache/ip [current_project]
+  set_property ip_output_repo H:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.runs/synth_1/system_wrapper.dcp
-  set_msg_config -source 4 -id {BD 41-1661} -limit 0
-  set_param project.isImplRun true
-  add_files H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/system.bd
-  set_param project.isImplRun false
-  read_xdc {{H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc}}
-  set_param project.isImplRun true
-  link_design -top system_wrapper -part xc7z020clg484-1
-  set_param project.isImplRun false
-  write_hwdef -force -file system_wrapper.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -169,7 +157,6 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force system_wrapper.mmi }
-  catch { write_bmm -force system_wrapper_bd.bmm }
   write_bitstream -force system_wrapper.bit 
   catch { write_sysdef -hwdef system_wrapper.hwdef -bitfile system_wrapper.bit -meminfo system_wrapper.mmi -file system_wrapper.sysdef }
   catch {write_debug_probes -quiet -force system_wrapper}

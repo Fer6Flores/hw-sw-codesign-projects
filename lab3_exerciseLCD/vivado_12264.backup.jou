@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Apr 20 21:42:49 2021
+# Process ID: 12264
+# Current directory: H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5748 H:\GitRepositories\hw-sw-codesign-projects\lab3_exerciseLCD\lab3_exerciseLCD.xpr
+# Log file: H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/vivado.log
+# Journal file: H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.xpr
+update_compile_order -fileset sources_1
+open_bd_design {H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/system.bd}
+ipx::edit_ip_in_project -upgrade true -name lcd_8_bits_ip_v1_0_project -directory H:/GitRepositories/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.tmp/lcd_8_bits_ip_v1_0_project h:/GitRepositories/hw-sw-codesign-projects/lcd_8_bits_ip/ip_repo/lcd_8_bits_ip_1.0/component.xml
+update_compile_order -fileset sources_1
+close_project

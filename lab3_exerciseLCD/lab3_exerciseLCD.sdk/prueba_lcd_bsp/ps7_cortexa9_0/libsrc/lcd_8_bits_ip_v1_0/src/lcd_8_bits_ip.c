@@ -8,9 +8,10 @@
 /***************************** Include Files *******************************/
 #include "lcd_8_bits_ip.h"
 #include "xparameters.h"
+#include "sleep.h"
 
-#define INST_DELAY 20000 //usec delay timer between instructions
-#define DATA_DELAY 20000 //usec delay timer between data
+#define INST_DELAY 39 //usec delay timer between instructions
+#define DATA_DELAY 43 //usec delay timer between data
 
 // Using the function LCD_8_bits_IP_mWriteReg(BaseAddress, RegOffset, Data)
 // defined in the file "lcd_8_bits_ip.h"
@@ -52,15 +53,15 @@
 //								INTERNAL FUNCTIONS
 //
 //==============================================================================
-
-// Delay function
-void usleep(unsigned int delay) // the value delay is in microseconds, approximately
-{
-	volatile unsigned int j, i; // it MUST be declared as volatile so that the compiler does not optimise (eliminate) the for loop
-
-	for(i=0; i<delay; i++)
-		for(j=0; j<70; j++);
-}
+//
+//// Delay function
+//void usleep(unsigned int delay) // the value delay is in microseconds, approximately
+//{
+//	volatile unsigned int j, i; // it MUST be declared as volatile so that the compiler does not optimise (eliminate) the for loop
+//
+//	for(i=0; i<delay; i++)
+//		for(j=0; j<70; j++);
+//}
 
 
 // Send instruction byte function
@@ -201,3 +202,88 @@ void LCD_PrintString(char * line)
 	}
 }
 
+// Read LCD status function
+// It reads the status of the LCD
+u32 LCD_ReadStatus(void)
+{
+	u32 data = 0;
+	// Write the necessary lines to send a data byte to the LCD
+	// The following steps must be done
+
+	// 1. Write the byte to the LCD port with the LCD RS and RW signals at the right value
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b00100000000);
+
+	// 2. Activate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b10100000000);
+
+	// 3. Read status
+	data = LCD_8_BITS_IP_mReadReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0);
+
+	// 4. Deactivate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b00100000000);
+
+	return data;
+}
+
+// Set memory address function
+// It sets the memory address (DDRAM=1 or CGRAM=0) of the LCD
+// Address has a maximum value of 63 for CGRAM and 127 for the DDRAM
+void LCD_SetMemoryAddress(unsigned char address, int mem)
+{
+	// Write the necessary lines to send an instruction byte to the LCD
+	// The following steps must be done
+
+	// CGRAM
+	if (mem == 0)
+	{
+		// 1. Write the byte to the LCD port with the LCD RS and RW signals at the right value
+		LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b00001000000 | address);
+
+		// 2. Activate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+		LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b10001000000 | address);
+
+		// 3. Deactivate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+		LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b00001000000 | address);
+	}
+	// DDRAM
+	else
+	{
+		// 1. Write the byte to the LCD port with the LCD RS and RW signals at the right value
+		LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b00010000000 | address);
+
+		// 2. Activate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+		LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b10010000000 | address);
+
+		// 3. Deactivate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+		LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b00010000000 | address);
+	}
+
+	// 4. Wait for "INST_DELAY" microseconds
+	usleep(INST_DELAY);
+}
+
+// Read data byte function
+// It reads a data byte to the LCD
+unsigned char LCD_ReadData(void)
+{
+	unsigned char data;
+	// Write the necessary lines to send a data byte to the LCD
+	// The following steps must be done
+
+	// 1. Write the byte to the LCD port with the LCD RS and RW signals at the right value
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b01100000000);
+
+	// 2. Activate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b11100000000);
+
+	// 3. Read data
+	data = LCD_8_BITS_IP_mReadReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0);
+
+	// 4. Deactivate the LCD Enable signal, while keeping the value of the byte to send and RS and RW
+	LCD_8_BITS_IP_mWriteReg(XPAR_LCD_IP_S_AXI_BASEADDR, 0, 0b01100000000);
+
+	// 5. Wait for "DATA_DELAY" microseconds
+	usleep(DATA_DELAY);
+
+	return data;
+}
