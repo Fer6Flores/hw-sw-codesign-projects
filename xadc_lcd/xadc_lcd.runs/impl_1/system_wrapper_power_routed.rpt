@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Mon Apr 19 00:07:24 2021
+| Date             : Thu Apr 22 13:29:19 2021
 | Host             : FloresToWin running 64-bit major release  (build 9200)
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
 | Design           : system_wrapper
@@ -59,8 +59,8 @@ Table of Contents
 |   CARRY4                |    <0.001 |       18 |     13300 |            0.14 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   Others                |     0.000 |      223 |       --- |             --- |
-| Signals                 |     0.006 |     2015 |       --- |             --- |
-| I/O                     |    <0.001 |       23 |       200 |           11.50 |
+| Signals                 |     0.006 |     2012 |       --- |             --- |
+| I/O                     |    <0.001 |       21 |       200 |           10.50 |
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | PS7                     |     1.527 |        1 |       --- |             --- |
 | Static Power            |     0.138 |          |           |                 |

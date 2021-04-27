@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
---Date        : Sun Apr 18 23:57:21 2021
+--Date        : Thu Apr 22 13:19:49 2021
 --Host        : FloresToWin running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -1602,9 +1602,6 @@ entity system is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     LED : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    Vaux0p : in STD_LOGIC;
-    Vaux8p : in STD_LOGIC;
-    Vp : in STD_LOGIC;
     buttons_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     switches_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
@@ -1940,9 +1937,6 @@ architecture STRUCTURE of system is
   signal ps7_0_axi_periph_M03_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal switches_GPIO_TRI_I : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal vauxp0_0_1 : STD_LOGIC;
-  signal vauxp8_0_1 : STD_LOGIC;
-  signal vp_in_0_1 : STD_LOGIC;
   signal NLW_rst_ps7_0_100M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_ps7_0_100M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1987,9 +1981,6 @@ begin
   LED(7 downto 0) <= led_ip_LED(7 downto 0);
   buttons_GPIO_TRI_I(4 downto 0) <= buttons_tri_i(4 downto 0);
   switches_GPIO_TRI_I(7 downto 0) <= switches_tri_i(7 downto 0);
-  vauxp0_0_1 <= Vaux0p;
-  vauxp8_0_1 <= Vaux8p;
-  vp_in_0_1 <= Vp;
 buttons: component system_axi_gpio_0_1
      port map (
       gpio_io_i(4 downto 0) => buttons_GPIO_TRI_I(4 downto 0),
@@ -2291,9 +2282,9 @@ xadc_wiz_0: component system_xadc_wiz_0_0
       s_axi_wvalid => ps7_0_axi_periph_M03_AXI_WVALID,
       vauxn0 => '0',
       vauxn8 => '0',
-      vauxp0 => vauxp0_0_1,
-      vauxp8 => vauxp8_0_1,
+      vauxp0 => '0',
+      vauxp8 => '0',
       vn_in => '0',
-      vp_in => vp_in_0_1
+      vp_in => '0'
     );
 end STRUCTURE;

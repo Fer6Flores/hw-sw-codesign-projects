@@ -17,8 +17,8 @@ int main()
 	int Status;
 	XAdcPs XAdcInst; 	  	/* XADC driver instance */
 	XAdcPs_Config *ConfigPtr;
-	u16 TempData, VccintData, VccauxData, VpVnData, VrefpData, VrefnData, VbramData, VccpintData, VccpauxData, VccpdroData, Vaux0pData, Vaux8pData;
-
+	u16 TempData, VccintData, VccauxData, VpVnData, VrefpData, VrefnData, VbramData, VccpintData, VccpauxData, Vccoddr, Vaux0pData, Vaux8pData;
+	float Temp;
 	/*
 	 * Initialize the XAdc driver.
 	 */
@@ -52,23 +52,38 @@ int main()
 		VbramData = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_VBRAM);
 		VccpintData = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_VCCPINT);
 		VccpauxData = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_VCCPAUX);
-		VccpdroData = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_VCCPDRO);
+		Vccoddr = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_VCCPDRO);
 		Vaux0pData = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_AUX_MIN);
 		Vaux8pData = XAdcPs_GetAdcData(&XAdcInst, XADCPS_CH_AUX_MIN+8);
 
+		TempData = TempData >> 4;
+		VccintData = VccintData >> 4;
+		VccauxData = VccauxData >> 4;
+		VpVnData = VpVnData >> 4;
+		VrefpData = VrefpData >> 4;
+		VrefnData = VrefnData >> 4;
+		VbramData = VbramData >> 4;
+		VccpintData = VccpintData >> 4;
+		VccpauxData = VccpauxData >> 4;
+		Vccoddr = Vccoddr >> 4;
+		Vaux0pData = Vaux0pData >> 4;
+		Vaux8pData = Vaux8pData >> 4;
+
+		Temp = TempData * 503.975 / 4096 - 273.15;
+
 		printf("\r\n\r\n-------------- Valores del XADC:\r\n");
-		printf("TempData: %f\r\n", (float)TempData/4095.0);
-		printf("VccintData: %f\r\n", (float)VccintData/4095.0);
-		printf("VccauxData: %f\r\n", (float)VccauxData/4095.0);
-		printf("VpVnData: %f\r\n", (float)VpVnData/4095.0);
-		printf("VrefpData: %f\r\n", (float)VrefpData/4095.0);
-		printf("VrefnData: %f\r\n", (float)VrefnData/4095.0);
-		printf("VbramData: %f\r\n", (float)VbramData/4095.0);
-		printf("VccpintData: %f\r\n", (float)VccpintData/4095.0);
-		printf("VccpauxData: %f\r\n", (float)VccpauxData/4095.0);
-		printf("VccpdroData: %f\r\n", (float)VccpdroData/4095.0);
-		printf("Vaux0pData: %f\r\n", (float)Vaux0pData/4095.0);
-		printf("Vaux8pData: %f\r\n", (float)Vaux8pData/4095.0);
+		printf("TempData: %f\r\n", Temp);
+		printf("VccintData: %f\r\n", (float)VccintData*3/4096.0);
+		printf("VccauxData: %f\r\n", (float)VccauxData*3/4096.0);
+		printf("VpVnData: %f\r\n", (float)VpVnData*3/4096.0);
+		printf("VrefpData: %f\r\n", (float)VrefpData*3/4096.0);
+		printf("VrefnData: %f\r\n", (float)VrefnData*3/4096.0);
+		printf("VbramData: %f\r\n", (float)VbramData*3/4096.0);
+		printf("VccpintData: %f\r\n", (float)VccpintData*3/4096.0);
+		printf("VccpauxData: %f\r\n", (float)VccpauxData*3/4096.0);
+		printf("Vccoddr: %f\r\n", (float)Vccoddr*3/4096.0);
+		printf("Vaux0pData: %f\r\n", (float)Vaux0pData*3/4096.0);
+		printf("Vaux8pData: %f\r\n", (float)Vaux8pData*3/4096.0);
 		printf("--------------------------------");
 
 		sleep(1);

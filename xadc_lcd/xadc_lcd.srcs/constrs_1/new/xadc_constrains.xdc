@@ -12,13 +12,13 @@
 # ----------------------------------------------------------------------------
 # XADC AD Channels - Bank 35
 # ---------------------------------------------------------------------------- 
-set_property PACKAGE_PIN L11 [get_ports {Vp}];  # "XADC-VP-R"
-set_property PACKAGE_PIN F16 [get_ports {Vaux0p}];  # "XADC-AD0P-R"
-set_property PACKAGE_PIN D16 [get_ports {Vaux8p}];  # "XADC-AD8P-R"
-# Set the bank voltage for IO Bank 35 to 1.8V by default.
-# set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 35]];
-# set_property IOSTANDARD LVCMOS25 [get_ports -of_objects [get_iobanks 35]];
-set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 35]];
+#set_property PACKAGE_PIN L11 [get_ports {Vp}];  # "XADC-VP-R"
+#set_property PACKAGE_PIN F16 [get_ports {Vaux0p}];  # "XADC-AD0P-R"
+#set_property PACKAGE_PIN D16 [get_ports {Vaux8p}];  # "XADC-AD8P-R"
+## Set the bank voltage for IO Bank 35 to 1.8V by default.
+## set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 35]];
+## set_property IOSTANDARD LVCMOS25 [get_ports -of_objects [get_iobanks 35]];
+#set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 35]];
 
 # ----------------------------------------------------------------------------
 # User LEDs - Bank 33

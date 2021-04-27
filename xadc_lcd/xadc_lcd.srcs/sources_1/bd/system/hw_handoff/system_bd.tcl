@@ -163,9 +163,6 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set LED [ create_bd_port -dir O -from 7 -to 0 LED ]
-  set Vaux0p [ create_bd_port -dir I Vaux0p ]
-  set Vaux8p [ create_bd_port -dir I Vaux8p ]
-  set Vp [ create_bd_port -dir I Vp ]
 
   # Create instance: buttons, and set properties
   set buttons [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 buttons ]
@@ -644,9 +641,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins buttons/s_axi_aclk] [get_bd_pins led_ip/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins switches/s_axi_aclk] [get_bd_pins xadc_wiz_0/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
-  connect_bd_net -net vauxp0_0_1 [get_bd_ports Vaux0p] [get_bd_pins xadc_wiz_0/vauxp0]
-  connect_bd_net -net vauxp8_0_1 [get_bd_ports Vaux8p] [get_bd_pins xadc_wiz_0/vauxp8]
-  connect_bd_net -net vp_in_0_1 [get_bd_ports Vp] [get_bd_pins xadc_wiz_0/vp_in]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41210000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs buttons/S_AXI/Reg] SEG_buttons_Reg
