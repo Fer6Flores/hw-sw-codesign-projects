@@ -969,7 +969,7 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
 
  XADC_INST : XADC
      generic map(
-        INIT_40 => X"0000", -- config reg 0
+        INIT_40 => X"1000", -- config reg 0
         INIT_41 => X"21AF", -- config reg 1
         INIT_42 => X"0400", -- config reg 2
         INIT_48 => X"7FE0", -- Sequencer channel selection

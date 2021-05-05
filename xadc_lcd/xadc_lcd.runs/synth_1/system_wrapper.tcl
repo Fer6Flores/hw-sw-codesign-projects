@@ -39,14 +39,8 @@ set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/hdl/system_wrapper.vhd
 add_files H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/system.bd
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc]
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1.xdc]
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_xadc_wiz_0_0/system_xadc_wiz_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_xadc_wiz_0_0/system_xadc_wiz_0_0.xdc]
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
@@ -60,9 +54,6 @@ set_property used_in_implementation false [get_files -all H:/GitR/hw-sw-codesign
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/constrs_1/new/xadc_constrains.xdc
-set_property used_in_implementation false [get_files H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/constrs_1/new/xadc_constrains.xdc]
-
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1

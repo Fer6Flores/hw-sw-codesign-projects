@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Apr 30 11:40:35 2021
+# Process ID: 8664
+# Current directory: H:/GitR/hw-sw-codesign-projects/xadc_lcd
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16068 H:\GitR\hw-sw-codesign-projects\xadc_lcd\xadc_lcd.xpr
+# Log file: H:/GitR/hw-sw-codesign-projects/xadc_lcd/vivado.log
+# Journal file: H:/GitR/hw-sw-codesign-projects/xadc_lcd\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.xpr
+update_compile_order -fileset sources_1
+open_bd_design {H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/system.bd}
+startgroup
+make_bd_pins_external  [get_bd_pins xadc_wiz_0/vn_in] [get_bd_pins xadc_wiz_0/vauxp0] [get_bd_pins xadc_wiz_0/vauxn0] [get_bd_pins xadc_wiz_0/vauxn8] [get_bd_pins xadc_wiz_0/vp_in] [get_bd_pins xadc_wiz_0/vauxp8]
+endgroup
+set_property name vn_in [get_bd_ports vn_in_0]
+set_property name vp_in [get_bd_ports vp_in_0]
+set_property name vauxn0 [get_bd_ports vauxn0_0]
+set_property name vauxp0 [get_bd_ports vauxp0_0]
+set_property name vauxn8 [get_bd_ports vauxn8_0]
+set_property name vauxp8 [get_bd_ports vauxp8_0]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_intf_nets switches_GPIO] [get_bd_cells switches]
+delete_bd_objs [get_bd_intf_ports switches]
+regenerate_bd_layout
+validate_bd_design
+reset_run system_xbar_0_synth_1
+reset_run synth_1
+save_bd_design
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+file copy -force H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.runs/impl_1/system_wrapper.sysdef H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk/system_wrapper.hdf
+
+launch_sdk -workspace H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk -hwspec H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk/system_wrapper.hdf

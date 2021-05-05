@@ -178,55 +178,6 @@
 
 /******************************************************************/
 
-/* Definitions for driver GPIO */
-#define XPAR_XGPIO_NUM_INSTANCES 2
-
-/* Definitions for peripheral BUTTONS */
-#define XPAR_BUTTONS_BASEADDR 0x41210000
-#define XPAR_BUTTONS_HIGHADDR 0x4121FFFF
-#define XPAR_BUTTONS_DEVICE_ID 0
-#define XPAR_BUTTONS_INTERRUPT_PRESENT 0
-#define XPAR_BUTTONS_IS_DUAL 0
-
-
-/* Definitions for peripheral SWITCHES */
-#define XPAR_SWITCHES_BASEADDR 0x41200000
-#define XPAR_SWITCHES_HIGHADDR 0x4120FFFF
-#define XPAR_SWITCHES_DEVICE_ID 1
-#define XPAR_SWITCHES_INTERRUPT_PRESENT 0
-#define XPAR_SWITCHES_IS_DUAL 0
-
-
-/******************************************************************/
-
-/* Canonical definitions for peripheral BUTTONS */
-#define XPAR_GPIO_0_BASEADDR 0x41210000
-#define XPAR_GPIO_0_HIGHADDR 0x4121FFFF
-#define XPAR_GPIO_0_DEVICE_ID XPAR_BUTTONS_DEVICE_ID
-#define XPAR_GPIO_0_INTERRUPT_PRESENT 0
-#define XPAR_GPIO_0_IS_DUAL 0
-
-/* Canonical definitions for peripheral SWITCHES */
-#define XPAR_GPIO_1_BASEADDR 0x41200000
-#define XPAR_GPIO_1_HIGHADDR 0x4120FFFF
-#define XPAR_GPIO_1_DEVICE_ID XPAR_SWITCHES_DEVICE_ID
-#define XPAR_GPIO_1_INTERRUPT_PRESENT 0
-#define XPAR_GPIO_1_IS_DUAL 0
-
-
-/******************************************************************/
-
-/* Definitions for driver LED_IP */
-#define XPAR_LED_IP_NUM_INSTANCES 1
-
-/* Definitions for peripheral LED_IP */
-#define XPAR_LED_IP_DEVICE_ID 0
-#define XPAR_LED_IP_S_AXI_BASEADDR 0x43C00000
-#define XPAR_LED_IP_S_AXI_HIGHADDR 0x43C0FFFF
-
-
-/******************************************************************/
-
 /* Definitions for driver SCUGIC */
 #define XPAR_XSCUGIC_NUM_INSTANCES 1U
 
@@ -292,8 +243,8 @@
 /* Definitions for peripheral XADC_WIZ_0 */
 #define XPAR_XADC_WIZ_0_IP_TYPE 0U
 #define XPAR_XADC_WIZ_0_DEVICE_ID 0U
-#define XPAR_XADC_WIZ_0_BASEADDR 0x43C20000U
-#define XPAR_XADC_WIZ_0_HIGHADDR 0x43C2FFFFU
+#define XPAR_XADC_WIZ_0_BASEADDR 0x43C00000U
+#define XPAR_XADC_WIZ_0_HIGHADDR 0x43C0FFFFU
 #define XPAR_XADC_WIZ_0_INCLUDE_INTR 1U
 
 
@@ -302,8 +253,8 @@
 /* Canonical definitions for peripheral XADC_WIZ_0 */
 #define XPAR_SYSMON_0_IP_TYPE 0U
 #define XPAR_SYSMON_0_DEVICE_ID XPAR_XADC_WIZ_0_DEVICE_ID
-#define XPAR_SYSMON_0_BASEADDR 0x43C20000U
-#define XPAR_SYSMON_0_HIGHADDR 0x43C2FFFFU
+#define XPAR_SYSMON_0_BASEADDR 0x43C00000U
+#define XPAR_SYSMON_0_HIGHADDR 0x43C0FFFFU
 #define XPAR_SYSMON_0_INCLUDE_INTR 1U
 
 
