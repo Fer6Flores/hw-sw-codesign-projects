@@ -292,7 +292,10 @@ lcd_8_bits_ip_v1_0_S_AXI_inst : lcd_8_bits_ip_v1_0_S_AXI
 -- Simulate write operations to your user IP
 -------------------------------------------------------------------------
 
-    AXI4_Lite_Write(x"0", x"0000050F"); -- write slv_reg0
+    AXI4_Lite_Write(x"0", x"0000030F"); -- write slv_reg0
+    AXI4_Lite_Write(x"0", x"00000700"); -- write slv_reg0
+    AXI4_Lite_Write(x"0", x"0000030F"); -- write slv_reg0
+    AXI4_Lite_Write(x"0", x"0000020F"); -- write slv_reg0
 
 -------------------------------------------------------------------------
 -- Simulate read operations of your user IP

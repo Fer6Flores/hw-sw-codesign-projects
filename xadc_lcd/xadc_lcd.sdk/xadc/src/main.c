@@ -50,15 +50,15 @@ int main()
 		Temp = XAdcPs_RawToTemperature(TempData);
 		Vccint = XAdcPs_RawToVoltage(VccintData);
 		Vccaux = XAdcPs_RawToVoltage(VccauxData);
-		VpVn = XAdcPs_RawToVoltage(VpVnData);
+		VpVn = XAdcPs_RawToVoltage(VpVnData)/3;
 		Vrefp = XAdcPs_RawToVoltage(VrefpData);
 		Vrefn = XAdcPs_RawToVoltage(VrefnData);
 		Vbram = XAdcPs_RawToVoltage(VbramData);
 		Vccpint = XAdcPs_RawToVoltage(VccpintData);
 		Vccpaux = XAdcPs_RawToVoltage(VccpauxData);
 		Vccoddr = XAdcPs_RawToVoltage(Vccoddr);
-		Vaux0p = XAdcPs_RawToVoltage(Vaux0pData);
-		Vaux8p = XAdcPs_RawToVoltage(Vaux8pData);
+		Vaux0p = XAdcPs_RawToVoltage(Vaux0pData)/3;
+		Vaux8p = XAdcPs_RawToVoltage(Vaux8pData)/3;
 
 		printf("\r\n\r\n-------------- Valores del XADC:\r\n");
 		printf("TempData: %f\r\n", Temp);

@@ -34,21 +34,20 @@ int main()
 
 		// Write the necessary lines to write "Univ. Vigo 2021" in the second line of the LCD
 		LCD_SetLine(2);
-		LCD_PrintString("Univ.");
+		LCD_PrintString("UVigo");
 
 		// Read pushbuttons and assign the value to psb_check variable
 		switches_check = XGpio_DiscreteRead(&switches, 1);
 
 		if (switches_check == 0x01)
 		{
-			LCD_SetMemoryAddress(0x00, 1);
-			LCD_PrintString("ALERTA.");
-			some_LCD_data = LCD_ReadData();
+			LCD_SetMemoryAddress(0x41, 1);
 			some_LCD_data = LCD_ReadData();
 			lcd_status = LCD_ReadStatus();
 			lcd_busy_flag = lcd_status & 0x00000080;
 			lcd_address_counter = lcd_status & 0x0000007F;
 			xil_printf("Data: %i\r\n", some_LCD_data);
+			xil_printf("Raw status: %i\r\n", lcd_status);
 			xil_printf("LCD Busy Flag: %i\r\n", lcd_busy_flag);
 			xil_printf("LCD Address Counter: %i\r\n", lcd_address_counter);
 			xil_printf("\r\n");

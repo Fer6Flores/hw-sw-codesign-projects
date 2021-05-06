@@ -1,0 +1,53 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed May  5 19:57:38 2021
+# Process ID: 15728
+# Current directory: H:/GitR/hw-sw-codesign-projects/xadc_lcd
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent664 H:\GitR\hw-sw-codesign-projects\xadc_lcd\xadc_lcd.xpr
+# Log file: H:/GitR/hw-sw-codesign-projects/xadc_lcd/vivado.log
+# Journal file: H:/GitR/hw-sw-codesign-projects/xadc_lcd\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.xpr
+update_compile_order -fileset sources_1
+open_bd_design {H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/system.bd}
+delete_bd_objs [get_bd_nets led_ip_LED] [get_bd_intf_nets ps7_0_axi_periph_M02_AXI] [get_bd_cells led_ip]
+delete_bd_objs [get_bd_ports LED]
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M01_AXI] [get_bd_intf_nets buttons_GPIO] [get_bd_cells buttons]
+delete_bd_objs [get_bd_intf_ports buttons]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {1}] [get_bd_cells ps7_0_axi_periph]
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M03_AXI]
+endgroup
+delete_bd_objs [get_bd_intf_nets Vp_Vn_0_1] [get_bd_intf_ports Vp_Vn]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/xadc_wiz_0/s_axi_lite} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins xadc_wiz_0/s_axi_lite]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins xadc_wiz_0/Vp_Vn]
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+validate_bd_design
+regenerate_bd_layout
+export_ip_user_files -of_objects  [get_files H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/constrs_1/new/xadc_constrains.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/constrs_1/new/xadc_constrains.xdc
+file delete -force H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/constrs_1/new/xadc_constrains.xdc
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+file copy -force H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.runs/impl_1/system_wrapper.sysdef H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk/system_wrapper.hdf
+
+launch_sdk -workspace H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk -hwspec H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk/system_wrapper.hdf
+startgroup
+set_property -dict [list CONFIG.CHANNEL_AVERAGING {16}] [get_bd_cells xadc_wiz_0]
+endgroup
+save_bd_design
+reset_run synth_1
+reset_run system_xadc_wiz_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+file copy -force H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.runs/impl_1/system_wrapper.sysdef H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk/system_wrapper.hdf
+
+launch_sdk -workspace H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk -hwspec H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.sdk/system_wrapper.hdf

@@ -584,42 +584,18 @@ proc create_root_design { parentCell } {
    CONFIG.USE_BOARD_FLOW {true} \
  ] $switches
 
-  # Create instance: system_ila_0, and set properties
-  set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
-  set_property -dict [ list \
-   CONFIG.C_MON_TYPE {MIX} \
-   CONFIG.C_NUM_MONITOR_SLOTS {1} \
-   CONFIG.C_NUM_OF_PROBES {1} \
-   CONFIG.C_PROBE0_TYPE {0} \
-   CONFIG.C_SLOT_0_APC_EN {0} \
-   CONFIG.C_SLOT_0_AXI_AR_SEL_DATA {1} \
-   CONFIG.C_SLOT_0_AXI_AR_SEL_TRIG {1} \
-   CONFIG.C_SLOT_0_AXI_AW_SEL_DATA {1} \
-   CONFIG.C_SLOT_0_AXI_AW_SEL_TRIG {1} \
-   CONFIG.C_SLOT_0_AXI_B_SEL_DATA {1} \
-   CONFIG.C_SLOT_0_AXI_B_SEL_TRIG {1} \
-   CONFIG.C_SLOT_0_AXI_R_SEL_DATA {1} \
-   CONFIG.C_SLOT_0_AXI_R_SEL_TRIG {1} \
-   CONFIG.C_SLOT_0_AXI_W_SEL_DATA {1} \
-   CONFIG.C_SLOT_0_AXI_W_SEL_TRIG {1} \
-   CONFIG.C_SLOT_0_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
- ] $system_ila_0
-
   # Create interface connections
   connect_bd_intf_net -intf_net axi_gpio_0_GPIO [get_bd_intf_ports SWITCHES] [get_bd_intf_pins switches/GPIO]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins lcd_ip/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
-connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins system_ila_0/SLOT_0_AXI]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets ps7_0_axi_periph_M00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins switches/S_AXI]
 
   # Create port connections
-  connect_bd_net -net Net [get_bd_ports LCD] [get_bd_pins lcd_ip/lcd] [get_bd_pins system_ila_0/probe0]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets Net]
-  connect_bd_net -net S00_ARESETN_1 [get_bd_pins lcd_ip/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins switches/s_axi_aresetn] [get_bd_pins system_ila_0/resetn]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins lcd_ip/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins switches/s_axi_aclk] [get_bd_pins system_ila_0/clk]
+  connect_bd_net -net Net [get_bd_ports LCD] [get_bd_pins lcd_ip/lcd]
+  connect_bd_net -net S00_ARESETN_1 [get_bd_pins lcd_ip/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins switches/s_axi_aresetn]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins lcd_ip/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins switches/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
 

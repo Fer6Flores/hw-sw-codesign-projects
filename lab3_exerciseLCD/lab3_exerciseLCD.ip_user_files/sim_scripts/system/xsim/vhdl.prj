@@ -1,0 +1,12 @@
+vhdl xil_defaultlib  \
+"../../../bd/system/sim/system.vhd" \
+"../../../bd/system/ip/system_rst_ps7_0_100M_0/sim/system_rst_ps7_0_100M_0.vhd" \
+"../../../bd/system/ipshared/6558/hdl/lcd_8_bits_ip_v1_0_S_AXI.vhd" \
+"../../../bd/system/ipshared/6558/hdl/lcd_8_bits_ip_v1_0.vhd" \
+"../../../bd/system/ip/system_lcd_8_bits_ip_0_0/sim/system_lcd_8_bits_ip_0_0.vhd" \
+"../../../bd/system/ip/system_axi_gpio_0_0/sim/system_axi_gpio_0_0.vhd" \
+"../../../bd/system/ip/system_system_ila_0_0/bd_0/ip/ip_0/sim/bd_d5b8_ila_lib_0.vhd" \
+"../../../bd/system/ip/system_system_ila_0_0/bd_0/sim/bd_d5b8.vhd" \
+"../../../bd/system/ip/system_system_ila_0_0/sim/system_system_ila_0_0.vhd" \
+
+nosort

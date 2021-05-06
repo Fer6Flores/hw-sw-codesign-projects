@@ -45,11 +45,6 @@ set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc]
 set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
-set_property used_in_synthesis false [get_files -all h:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_system_ila_0_1/bd_0/ip/ip_0/bd_1579_ila_lib_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/ip/system_system_ila_0_1/bd_0/bd_1579_ooc.xdc]
 set_property used_in_implementation false [get_files -all H:/GitR/hw-sw-codesign-projects/lab3_exerciseLCD/lab3_exerciseLCD.srcs/sources_1/bd/system/system_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being

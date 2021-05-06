@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Tue Apr 27 22:22:05 2021
+| Date         : Thu May  6 12:02:44 2021
 | Host         : FloresToWin running 64-bit major release  (build 9200)
 | Command      : report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
 | Design       : system_wrapper
@@ -20,78 +20,32 @@ Table of Contents
 1. REPORT SUMMARY
 -----------------
             Netlist: netlist
-          Floorplan: checkpoint_system_wrapper
+          Floorplan: design_1
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 12
-+-----------+----------+---------------------------------+------------+
-| Rule      | Severity | Description                     | Violations |
-+-----------+----------+---------------------------------+------------+
-| RPBF-3    | Warning  | IO port buffering is incomplete | 11         |
-| RTSTAT-10 | Warning  | No routable loads               | 1          |
-+-----------+----------+---------------------------------+------------+
+             Violations found: 3
++--------+----------+---------------------------------+------------+
+| Rule   | Severity | Description                     | Violations |
++--------+----------+---------------------------------+------------+
+| RPBF-3 | Warning  | IO port buffering is incomplete | 3          |
++--------+----------+---------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 RPBF-3#1 Warning
 IO port buffering is incomplete  
-Device port LCD[0] expects both input and output buffering but the buffers are incomplete.
+Device port LCD[10] expects both input and output buffering but the buffers are incomplete.
 Related violations: <none>
 
 RPBF-3#2 Warning
 IO port buffering is incomplete  
-Device port LCD[10] expects both input and output buffering but the buffers are incomplete.
+Device port LCD[8] expects both input and output buffering but the buffers are incomplete.
 Related violations: <none>
 
 RPBF-3#3 Warning
 IO port buffering is incomplete  
-Device port LCD[1] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RPBF-3#4 Warning
-IO port buffering is incomplete  
-Device port LCD[2] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RPBF-3#5 Warning
-IO port buffering is incomplete  
-Device port LCD[3] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RPBF-3#6 Warning
-IO port buffering is incomplete  
-Device port LCD[4] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RPBF-3#7 Warning
-IO port buffering is incomplete  
-Device port LCD[5] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RPBF-3#8 Warning
-IO port buffering is incomplete  
-Device port LCD[6] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RPBF-3#9 Warning
-IO port buffering is incomplete  
-Device port LCD[7] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RPBF-3#10 Warning
-IO port buffering is incomplete  
-Device port LCD[8] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RPBF-3#11 Warning
-IO port buffering is incomplete  
 Device port LCD[9] expects both input and output buffering but the buffers are incomplete.
-Related violations: <none>
-
-RTSTAT-10#1 Warning
-No routable loads  
-31 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/s_bscan_tms, system_i/system_ila_0/U0/ila_lib/U0/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[13], u_ila_0/inst/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[13] (the first 15 of 29 listed).
 Related violations: <none>
 
 
