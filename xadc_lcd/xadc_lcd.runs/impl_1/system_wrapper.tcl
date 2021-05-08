@@ -84,6 +84,7 @@ set rc [catch {
   set_param project.isImplRun true
   add_files H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/sources_1/bd/system/system.bd
   set_param project.isImplRun false
+  read_xdc {{H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc}}
   set_param project.isImplRun true
   link_design -top system_wrapper -part xc7z020clg484-1
   set_param project.isImplRun false

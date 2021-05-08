@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1620239645">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1620427203">
   <File Type="PA-TCL" Name="system_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="system_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="system_wrapper_reports.tcl"/>
@@ -36,7 +36,16 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lcd/lcd.srcs/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc"/>
+        <Attr Name="ImportTime" Val="1619568610"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -50,7 +59,4 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="system_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_xadc_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_rst_ps7_0_100M_0"/>
 </GenRun>

@@ -54,6 +54,9 @@ set_property used_in_implementation false [get_files -all H:/GitR/hw-sw-codesign
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc}}
+set_property used_in_implementation false [get_files {{H:/GitR/hw-sw-codesign-projects/xadc_lcd/xadc_lcd.srcs/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc}}]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1

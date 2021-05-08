@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri May  7 16:17:13 2021
+# Process ID: 3336
+# Current directory: H:/GitR/hw-sw-codesign-projects/xadc
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5080 H:\GitR\hw-sw-codesign-projects\xadc\xadc.xpr
+# Log file: H:/GitR/hw-sw-codesign-projects/xadc/vivado.log
+# Journal file: H:/GitR/hw-sw-codesign-projects/xadc\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/GitR/hw-sw-codesign-projects/xadc/xadc.xpr
+open_bd_design {H:/GitR/hw-sw-codesign-projects/xadc/xadc.srcs/sources_1/bd/system/system.bd}
+update_compile_order -fileset sources_1
+regenerate_bd_layout
+validate_bd_design -force
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+regenerate_bd_layout
+reset_run system_auto_pc_0_synth_1

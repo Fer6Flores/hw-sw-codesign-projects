@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1620239646">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1620427204">
   <File Type="BITSTR-BMM" Name="system_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="system_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="system_wrapper_timing_summary_init.rpt"/>
@@ -96,7 +96,16 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lcd/lcd.srcs/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc"/>
+        <Attr Name="ImportTime" Val="1619568610"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/Resources exercise LCD/lcd_8_bits_incomplete.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -118,7 +127,4 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="system_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_xadc_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_rst_ps7_0_100M_0"/>
 </GenRun>

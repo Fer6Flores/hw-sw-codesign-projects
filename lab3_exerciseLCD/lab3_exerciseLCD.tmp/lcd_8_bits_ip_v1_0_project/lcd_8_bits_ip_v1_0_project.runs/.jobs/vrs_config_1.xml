@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<Runs Version="1" Minor="0">
-	<Run Id="synth_1" LaunchDir="h:/gitr/hw-sw-codesign-projects/lab3_exerciselcd/lab3_exerciselcd.tmp/lcd_8_bits_ip_v1_0_project/lcd_8_bits_ip_v1_0_project.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Parameters>
-		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
-	</Parameters>
-</Runs>
-
