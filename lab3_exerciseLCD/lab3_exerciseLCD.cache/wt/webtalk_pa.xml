@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu May  6 13:49:40 2021">
+<application name="pa" timeStamp="Thu May 13 19:55:05 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="b6f788e4837b4e1c8e9711f78aacdab8" type="ProjectID"/>
 <property name="ProjectIteration" value="21" type="ProjectIteration"/>
@@ -238,9 +238,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="32" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="161" type="GuiMode"/>
+<property name="GuiMode" value="171" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="150" type="TclMode"/>
+<property name="TclMode" value="159" type="TclMode"/>
 </item>
 </section>
 </application>

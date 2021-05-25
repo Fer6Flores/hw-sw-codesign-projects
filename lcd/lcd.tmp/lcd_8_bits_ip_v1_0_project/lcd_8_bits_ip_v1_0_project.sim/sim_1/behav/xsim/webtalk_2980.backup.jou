@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu May 13 19:13:05 2021
+# Process ID: 2980
+# Current directory: h:/gitr/hw-sw-codesign-projects/lcd/lcd.tmp/lcd_8_bits_ip_v1_0_project/lcd_8_bits_ip_v1_0_project.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source h:/gitr/hw-sw-codesign-projects/lcd/lcd.tmp/lcd_8_bits_ip_v1_0_project/lcd_8_bits_ip_v1_0_project.sim/sim_1/behav/xsim/xsim.dir/testbench_lcd_8_bits_ip_v1_0_S_AXI_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: h:/gitr/hw-sw-codesign-projects/lcd/lcd.tmp/lcd_8_bits_ip_v1_0_project/lcd_8_bits_ip_v1_0_project.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: h:/gitr/hw-sw-codesign-projects/lcd/lcd.tmp/lcd_8_bits_ip_v1_0_project/lcd_8_bits_ip_v1_0_project.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source h:/gitr/hw-sw-codesign-projects/lcd/lcd.tmp/lcd_8_bits_ip_v1_0_project/lcd_8_bits_ip_v1_0_project.sim/sim_1/behav/xsim/xsim.dir/testbench_lcd_8_bits_ip_v1_0_S_AXI_behav/webtalk/xsim_webtalk.tcl -notrace
